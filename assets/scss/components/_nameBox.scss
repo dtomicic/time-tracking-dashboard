@@ -1,0 +1,67 @@
+.main__area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: toRem(30);
+    margin: toRem(60) 0;
+
+    &Left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &Top {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: $blue;
+            border-radius: toRem(10);
+            padding: toRem(20);
+            gap: toRem(20);
+            width: 90%;
+            z-index: 9999;
+
+            &Image {
+                width: 25%;
+                border: 3px solid white;
+                border-radius: toRem(50);
+            }
+
+            &Text {
+                display: flex;
+                flex-direction: column;
+                font-family: $mainFont;
+                color: $paleBlue;
+                gap: toRem(5);
+
+                &SmallHeader {
+                    font-weight: 300;
+                    font-size: toRem(14)
+                }
+
+                &BigHeader {
+                    font-weight: 400;
+                    font-size: toRem(22)
+                }
+            }
+        }
+
+        &Bottom {
+            position: relative;
+            bottom: toRem(5);
+            background-color: $darkBlue;
+            width: 90%;
+            display: flex;
+            justify-content: space-around;
+            border-radius: 0 0 toRem(10) toRem(10);
+            padding: toRem(25) toRem(20) toRem(20) toRem(20);
+            font-family: $mainFont;
+            color: $desBlue;
+
+            &Header {
+                font-weight: 300;
+            }
+        }
+    }
+}
