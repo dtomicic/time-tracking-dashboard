@@ -27,4 +27,4 @@ Design of the project could use a bit more work to fix some minor issues, but I 
 - JavaScript
  
 ## Live preview
-[Click for live preview](https://masoba-stones.vercel.app/)
+[Click for live preview](https://time-tracking-dashboard-blush-delta.vercel.app/)
