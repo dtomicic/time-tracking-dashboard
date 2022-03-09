@@ -1,16 +1,8 @@
 const daily = document.getElementById('daily');
 const weekly = document.getElementById('weekly');
 const monthly = document.getElementById('monthly');
-const timeHeader = document.getElementsByClassName('main__areaLeftBottomHeader');
 const headersCurrent = ["workCurrent","playCurrent","studyCurrent","exerciseCurrent","socialCurrent","scCurrent"];
 const headersPrevious = ["workPrevious","playPrevious","studyPrevious","exercisePrevious","socialPrevious","scPrevious"];
-
-// const workPrev = document.getElementById('workPrevious');
-// const playPrev = document.getElementById('playPrevious');
-// const studyPrev = document.getElementById('studyPrevious');
-// const exercisePrev = document.getElementById('exercisePrevious');
-// const socialPrev = document.getElementById('socialPrevious');
-// const scPrev = document.getElementById('scPrevious');
 
 window.onload = () => {
     getTime();
@@ -41,23 +33,28 @@ function getTime() {
        return response.json();
     })
     .then(jsondata => {
-        // console.log(jsondata[0]['timeframes']['daily']['current']);
-        if (daily.classList.contains('active')){
-            for (i = 0; i < headersCurrent.length; i++) {
-                document.getElementById(headersCurrent[i]).innerHTML = `${jsondata[i]['timeframes']['daily']['current']}`;
-                document.getElementById(headersPrevious[i]).innerHTML = "Previous day - " + `${jsondata[i]['timeframes']['daily']['previous']}` + "hrs";
+        for (i = 0; i < headersCurrent.length; i++){
+
+            const dailyCurr = jsondata[i]['timeframes']['daily']['current'];
+            const dailyPrev = "Previous Day - " + jsondata[i]['timeframes']['daily']['previous'] + "hrs";
+
+            const weekCurr = jsondata[i]['timeframes']['weekly']['current'];
+            const weekPrev = "Last Week - " + jsondata[i]['timeframes']['weekly']['previous'] + "hrs";
+
+            const monthCurr = jsondata[i]['timeframes']['monthly']['current'];
+            const monthPrev = "Last Month - " + jsondata[i]['timeframes']['monthly']['previous'] + "hrs";
+
+            if (daily.classList.contains('active')){
+                document.getElementById(headersCurrent[i]).innerHTML = `${dailyCurr}`;
+                document.getElementById(headersPrevious[i]).innerHTML = `${dailyPrev}`;
             }
-        }
-        else if (weekly.classList.contains('active')){
-            for (i = 0; i < headersCurrent.length; i++) {
-                document.getElementById(headersCurrent[i]).innerHTML = `${jsondata[i]['timeframes']['weekly']['current']}`;
-                document.getElementById(headersPrevious[i]).innerHTML = "Last Week -  " + `${jsondata[i]['timeframes']['weekly']['previous']}` + "hrs";
+            else if (weekly.classList.contains('active')){
+                document.getElementById(headersCurrent[i]).innerHTML = `${weekCurr}`;
+                document.getElementById(headersPrevious[i]).innerHTML = `${weekPrev}`;
             }
-        }
-        else if (monthly.classList.contains('active')){
-            for (i = 0; i < headersCurrent.length; i++) {
-                document.getElementById(headersCurrent[i]).innerHTML = `${jsondata[i]['timeframes']['monthly']['current']}`;
-                document.getElementById(headersPrevious[i]).innerHTML = "Last Month -  " + `${jsondata[i]['timeframes']['monthly']['previous']}` + "hrs";
+            else if (monthly.classList.contains('active')){
+                document.getElementById(headersCurrent[i]).innerHTML = `${monthCurr}`;
+                document.getElementById(headersPrevious[i]).innerHTML = `${monthPrev}`;
             }
         }
     });
