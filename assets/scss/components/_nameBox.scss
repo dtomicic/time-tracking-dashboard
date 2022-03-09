@@ -65,3 +65,42 @@
         }
     }
 }
+
+// Breakpoints
+@media(min-width: $breakDesktop) {
+    
+    .main__areaLeftTop {
+        flex-direction: column;
+        align-items: flex-start;
+
+        &Image {
+            width: 40%;
+        }
+
+        &Text {
+            margin-bottom: toRem(30);
+
+            &SmallHeader {
+                font-size: toRem(20);
+            }
+
+            &BigHeader {
+                font-size: toRem(28);
+            }
+        }
+    }
+
+    .main__areaLeftBottom {
+        flex-direction: column;
+        gap: toRem(25);
+
+        &Header:hover {
+            cursor: pointer;
+            color: $paleBlue;
+        }
+    }
+}
+
+.active {
+    color: $paleBlue;
+}

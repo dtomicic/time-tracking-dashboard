@@ -74,6 +74,7 @@
         gap: toRem(10);
         position: relative;
         bottom: toRem(30);
+        transition: ease-in-out 0.3s;
 
         &Header {
             display: flex;
@@ -106,35 +107,28 @@
                 color: $paleBlue;
             }
         }
+
+        &:hover {
+            background-color: $desBlue;
+            cursor: pointer;
+        }
     }
 }
 
 @media (min-width: $breakDesktop) {
+    .main {
+        height: 100vh;
+        align-items: center;
+    }
+
     .main__area {
         flex-direction: row;
         align-items: flex-start;
 
-        &LeftTop {
-            flex-direction: column;
-            align-items: flex-start;
-
-            &Image {
-                width: 40%;
-            }
-
-            &Text {
-                margin-bottom: toRem(30);
-            }
-        }
-
-        &LeftBottom {
-            flex-direction: column;
-            gap: toRem(15);
-        }
-
         &Right {
             flex-direction: row;
             flex-wrap: wrap;
+            width: 50%;
 
             &Top {
                 flex-direction: row;
@@ -144,6 +138,11 @@
                 flex-direction: row;
             }
         }
+    }
+
+    .box {
+        min-width: toRem(200);
+        max-width: toRem(201);
     }
 
     .box__bottomHeader {

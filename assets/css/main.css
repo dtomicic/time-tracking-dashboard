@@ -114,6 +114,45 @@
   font-weight: 300;
 }
 
+@media (min-width: 1440px) {
+  .main__areaLeftTop {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .main__areaLeftTopImage {
+    width: 40%;
+  }
+  .main__areaLeftTopText {
+    margin-bottom: 1.875rem;
+  }
+  .main__areaLeftTopTextSmallHeader {
+    font-size: 1.25rem;
+  }
+  .main__areaLeftTopTextBigHeader {
+    font-size: 1.75rem;
+  }
+  .main__areaLeftBottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1.5625rem;
+  }
+  .main__areaLeftBottomHeader:hover {
+    cursor: pointer;
+    color: #bdc1ff;
+  }
+}
+
+.active {
+  color: #bdc1ff;
+}
+
 .main__areaRight {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -224,6 +263,8 @@
   gap: 0.625rem;
   position: relative;
   bottom: 1.875rem;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
 }
 
 .box__bottomHeader {
@@ -270,7 +311,18 @@
   color: #bdc1ff;
 }
 
+.box__bottom:hover {
+  background-color: #6f76c8;
+  cursor: pointer;
+}
+
 @media (min-width: 1440px) {
+  .main {
+    height: 100vh;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .main__area {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -280,28 +332,6 @@
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .main__areaLeftTop {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-  .main__areaLeftTopImage {
-    width: 40%;
-  }
-  .main__areaLeftTopText {
-    margin-bottom: 1.875rem;
-  }
-  .main__areaLeftBottom {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 0.9375rem;
-  }
   .main__areaRight {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -309,6 +339,7 @@
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    width: 50%;
   }
   .main__areaRightTop {
     -webkit-box-orient: horizontal;
@@ -321,6 +352,10 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+  .box {
+    min-width: 12.5rem;
+    max-width: 12.5625rem;
   }
   .box__bottomHeader {
     gap: 0rem;
